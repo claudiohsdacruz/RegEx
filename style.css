@@ -1,0 +1,84 @@
+/* Reinitializer tout les paramètres a zero */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    height: 100%;
+    width: 800px;
+    height: 900px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(163, 158, 158, 0.8);
+    padding: 20px;
+}
+
+main p {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    margin: 20px 0;
+}
+
+main #formulaire {
+    background-color: rgb(247, 245, 245);
+    border: solid 1px black;
+    padding: 20px;
+}
+
+.element {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.hide {
+    display: none;
+}
+
+.droit {
+    text-align: right;
+    color:red;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 400px;
+}
+
+#cours {
+    width: 640px;
+    height: 100px;
+}
+
+main #formulaire p, h2 {
+    text-align: end;
+    margin-right: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+}
+
+button {
+   padding: 5px 10px; 
+}
+
+input, button {
+    cursor: pointer; 
+}

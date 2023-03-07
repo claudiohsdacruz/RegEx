@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx</title>
+    <link href="style.css" rel="stylesheet" /> 
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Demande d'admission</h1>
+        <p>Pour vous inscrire à la session <strong>autonome</strong>, veulliez S.V.P remplir le formulaire suivant.</p>
+        <div id="formulaire">
+            <form method="GET" action="" id="form">
+                <div id="personnel">
+                    <div id="validerNom" class="droit hide">
+                        <label for="error_nom">Chaque mot doit commencer par une majuscule!</label>
+                    </div>
+                    <div id="nom" class="element">
+                        <label for="nomcomplet">Nom complet :</label>
+                        <input type="text" name="nomcomplet" id="nomcomplet" placeholder="Ex. Michel Landy">
+                    </div>
+                    <div id="validerTel" class="droit hide">
+                        <label for="error_tel">Format invalide du telephone!</label>
+                    </div>
+                    <div id="tel" class="element">
+                        <label for="telephone">Telephone :</label>
+                        <input type="text" name="telephone" id="telephone" placeholder="Ex. (819) 564-6235">
+                    </div>
+                    <div id="validerCodePostal" class="droit hide">
+                        <label for="error_codePostal">Format invalide du Code Postal!</label>
+                    </div> 
+                    <div id="code" class="element">   
+                        <label for="codepostal">Code postal :</label>
+                        <input type="text" name="codepostal" id="codepostal" placeholder="Ex. J1E 4K1">
+                    </div>
+                    <div id="validerDateNaissance" class="droit hide">
+                        <label for="error_dateNaissance">Format invalide de la date de naissance!</label>
+                    </div> 
+                    <div id="naissance" class="element">
+                        <label for="datenaissance">Date de naissance :</label>
+                        <input type="text" name="datenaissance" id="datenaissance" placeholder="Ex. 2000-10-05">
+                    </div> 
+                    <div id="validerNAS" class="droit hide">
+                        <label for="error_NAS">Format invalide du numero NAS!</label>
+                    </div> 
+                    <div id="nas" class="element">   
+                        <label for="codenas">NAS :</label>
+                        <input type="text" name="codenas" id="codenas" placeholder="Ex. 255.664.789">
+                    </div>
+                    <div id="validerCourriel" class="droit hide">
+                        <label for="error_courriel">Format invalide du courriel!</label>
+                    </div>
+                    <div id="email" class="element">
+                        <label for="courriel">Courriel :</label>
+                        <input type="text" name="courriel" id="courriel" placeholder="Ex. mon.compte@cegep.sherbrooke.qc.ca">
+                    </div> 
+                    <div id="validerAdresseInternet" class="droit hide">
+                        <label for="error_adresseInternet">Format invalide de l'adresse Internet!</label>
+                    </div>
+                    <div id="internet" class="element">   
+                        <label for="adressinternet">Adress internet :</label>
+                        <input type="text" name="adressinternet" id="adressinternet" placeholder="Ex. https://cegepsherbrooke.qc.ca">
+                    </div>
+                    <div id="validerCodeCours" class="droit hide">
+                        <label for="error_codeCours">Format invalide du code du cours!</label>
+                    </div>
+                    <div id="inscription" class="element">   
+                        <label for="cours">À quel(s) cours souhaitez-vous vous inscrire. Entrez le(s) code(s) de cours:</label>
+                        <input type="text" name="cours" id="cours" placeholder="Ex. 000-000-SH">
+                    </div>
+                    <p>nombre de cours detecté : <strong id="nombre_cours"></strong></p>
+                </div>
+                <div id="financieres">
+                    <div id="validerDon" class="droit hide">
+                        <label for="error_codeDon">Valeur invalide !</label>
+                    </div>
+                    <div id="don" class="element">
+                        <label for="donfondation">Don à la fondation :</label>
+                        <input type="text" name="donfondation" id="donfondation" placeholder="Ex. 200,00">
+                    </div>
+                    <div id="validerTypeCarte" class="droit hide">
+                        <label for="error_codetypecarte">Type de carte invalide ! Choisissez (VISA, MASTERCARD ou AMEX)</label>
+                    </div>
+                    <div id="card" class="element">
+                        <label for="typecarte">Carte crédit(type) :</label>
+                        <input type="text" name="typecarte" id="typecarte" placeholder="Ex. VISA">
+                    </div> 
+                    <div id="validerNumeroCarte" class="droit hide">
+                        <label for="error_codenumerocarte">Le numéro de la carte est invalide! </label>
+                    </div>
+                    <div id="num" class="element">   
+                        <label for="numerocarte">Numéro de la carte :</label>
+                        <input type="text" name="numerocarte" id="numerocarte" placeholder="Ex. 4540-1111-1111-1111">
+                    </div>
+                    <div id="validerDateExpiration" class="droit hide">
+                        <label for="error_codedateexpiration">Le format de la date d'expiration est invalide ! </label>
+                    </div>
+                    <div id="expiration" class="element">
+                        <label for="expirationcarte">Expiration de la carte :</label>
+                        <input type="text" name="expirationcarte" id="expirationcarte" placeholder="Ex. 07/22">
+                    </div> 
+                    <h2>Montant total : <strong id="montantTotal"></strong></h2>
+                </div>
+                <div id="validerMotDePasse" class="droit hide">
+                    <label for="error_codemdp">Le mot de passe est invalide ! </label>
+                </div>
+                <div id="password" class="element">
+                    <label for="mdp">Confirmez votre mot de passe :</label>
+                    <input type="password" name="mdp" id="mpd">
+                </div>
+                <div class="button">
+                    <button type="submit" id="soumetre" value="submision">Soumettre</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
